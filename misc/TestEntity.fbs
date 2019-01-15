@@ -1,0 +1,13 @@
+table TestEntity {
+    id: ulong;
+    simpleBoolean: bool;
+    simpleByte: byte;
+    simpleShort: short;
+    simpleInt: int;
+    simpleLong: long;
+    simpleFloat: float;
+    simpleDouble: double;
+    simpleString: string;
+    simpleByteArray: [byte];
+    simpleDate: ulong;
+}

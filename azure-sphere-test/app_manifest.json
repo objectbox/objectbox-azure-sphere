@@ -1,0 +1,17 @@
+{
+  "SchemaVersion": 1,
+  "Name" : "objectbox_azure_sphere_test",
+  "ComponentId" : "1f326107-9cf6-455c-999e-573d54f68833",
+  "EntryPoint": "/bin/app",
+  "CmdArgs": [],
+  "Capabilities": {
+    "AllowedConnections": [ "192.168.178.54" ],
+    "AllowedTcpServerPorts": [],
+    "AllowedUdpServerPorts": [],
+    "Gpio": [],
+    "Uart": [],
+    "WifiConfig": false,
+    "NetworkConfig": false,
+    "SystemTime": false
+  }
+}

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\flatcc">
+      <UniqueIdentifier>{7912709a-25ea-4e87-8e7c-1934a56562ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flatcc\portable">
+      <UniqueIdentifier>{e36fb35d-5e7a-4cd3-9363-1d1246a16c2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flatcc\reflection">
+      <UniqueIdentifier>{40af177c-274b-4510-9bdc-732b8c0f8b3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flatcc\support">
+      <UniqueIdentifier>{06e840db-2843-4fe1-b4d0-a079bddd76a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flatcc\portable\include">
+      <UniqueIdentifier>{b269025d-c67e-42ec-b35e-85bc278064fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flatcc\portable\include\std">
+      <UniqueIdentifier>{dbaa6257-6eda-475b-9731-46997adf7d03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flatcc\portable\include\linux">
+      <UniqueIdentifier>{c9d03d75-3da0-4acb-a10b-d7212e985d96}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="builder.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="emitter.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="refmap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Inc\Public\flatcc\flatcc.h">
+      <Filter>Header Files\flatcc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\flatcc_accessors.h">
+      <Filter>Header Files\flatcc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\flatcc_alloc.h">
+      <Filter>Header Files\flatcc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\flatcc_builder.h">
+      <Filter>Header Files\flatcc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\flatcc_emitter.h">
+      <Filter>Header Files\flatcc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\flatcc_endian.h">
+      <Filter>Header Files\flatcc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\flatcc_epilogue.h">
+      <Filter>Header Files\flatcc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\flatcc_flatbuffers.h">
+      <Filter>Header Files\flatcc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\flatcc_identifier.h">
+      <Filter>Header Files\flatcc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\flatcc_iov.h">
+      <Filter>Header Files\flatcc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\flatcc_json_parser.h">
+      <Filter>Header Files\flatcc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\flatcc_json_printer.h">
+      <Filter>Header Files\flatcc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\flatcc_portable.h">
+      <Filter>Header Files\flatcc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\flatcc_prologue.h">
+      <Filter>Header Files\flatcc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\flatcc_refmap.h">
+      <Filter>Header Files\flatcc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\flatcc_rtconfig.h">
+      <Filter>Header Files\flatcc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\flatcc_types.h">
+      <Filter>Header Files\flatcc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\flatcc_unaligned.h">
+      <Filter>Header Files\flatcc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\flatcc_verifier.h">
+      <Filter>Header Files\flatcc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\flatcc_version.h">
+      <Filter>Header Files\flatcc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\support\cdump.h">
+      <Filter>Header Files\flatcc\support</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\support\elapsed.h">
+      <Filter>Header Files\flatcc\support</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\support\hexdump.h">
+      <Filter>Header Files\flatcc\support</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\support\readfile.h">
+      <Filter>Header Files\flatcc\support</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\reflection\flatbuffers_common_builder.h">
+      <Filter>Header Files\flatcc\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\reflection\flatbuffers_common_reader.h">
+      <Filter>Header Files\flatcc\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\reflection\reflection_builder.h">
+      <Filter>Header Files\flatcc\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\reflection\reflection_reader.h">
+      <Filter>Header Files\flatcc\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\reflection\reflection_verifier.h">
+      <Filter>Header Files\flatcc\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\grisu3_math.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\grisu3_parse.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\grisu3_print.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\paligned_alloc.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\pbase64.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\pdiagnostic.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\pdiagnostic_pop.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\pdiagnostic_push.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\pendian.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\pendian_detect.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\pinline.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\pinttypes.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\portable.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\portable_basic.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\pparsefp.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\pparseint.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\pprintfp.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\pprintint.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\pstatic_assert.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\pstatic_assert_scope.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\pstdalign.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\pstdbool.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\pstdint.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\punaligned.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\pversion.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\pwarnings.h">
+      <Filter>Header Files\flatcc\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\include\linux\endian.h">
+      <Filter>Header Files\flatcc\portable\include\linux</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\include\std\inttypes.h">
+      <Filter>Header Files\flatcc\portable\include\std</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\include\std\stdalign.h">
+      <Filter>Header Files\flatcc\portable\include\std</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\include\std\stdbool.h">
+      <Filter>Header Files\flatcc\portable\include\std</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Public\flatcc\portable\include\std\stdint.h">
+      <Filter>Header Files\flatcc\portable\include\std</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

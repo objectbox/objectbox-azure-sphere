@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "flatcc", "flatcc\flatcc.vcxproj", "{6739E9D3-CE3A-489F-9D54-3366CE91630B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "azure-sphere-test", "azure-sphere-test\azure-sphere-test.vcxproj", "{3411110A-18DE-40B1-A99C-C4D14075775E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6739E9D3-CE3A-489F-9D54-3366CE91630B} = {6739E9D3-CE3A-489F-9D54-3366CE91630B}
+		{568212F7-43DD-405D-9B51-394C6C8A2AA5} = {568212F7-43DD-405D-9B51-394C6C8A2AA5}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "objectbox-client-azure-sphere", "objectbox-client-azure-sphere\objectbox-client-azure-sphere.vcxproj", "{568212F7-43DD-405D-9B51-394C6C8A2AA5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Release|ARM = Release|ARM
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6739E9D3-CE3A-489F-9D54-3366CE91630B}.Debug|ARM.ActiveCfg = Debug|ARM
+		{6739E9D3-CE3A-489F-9D54-3366CE91630B}.Debug|ARM.Build.0 = Debug|ARM
+		{6739E9D3-CE3A-489F-9D54-3366CE91630B}.Release|ARM.ActiveCfg = Release|ARM
+		{6739E9D3-CE3A-489F-9D54-3366CE91630B}.Release|ARM.Build.0 = Release|ARM
+		{3411110A-18DE-40B1-A99C-C4D14075775E}.Debug|ARM.ActiveCfg = Debug|ARM
+		{3411110A-18DE-40B1-A99C-C4D14075775E}.Debug|ARM.Build.0 = Debug|ARM
+		{3411110A-18DE-40B1-A99C-C4D14075775E}.Release|ARM.ActiveCfg = Release|ARM
+		{3411110A-18DE-40B1-A99C-C4D14075775E}.Release|ARM.Build.0 = Release|ARM
+		{568212F7-43DD-405D-9B51-394C6C8A2AA5}.Debug|ARM.ActiveCfg = Debug|ARM
+		{568212F7-43DD-405D-9B51-394C6C8A2AA5}.Debug|ARM.Build.0 = Debug|ARM
+		{568212F7-43DD-405D-9B51-394C6C8A2AA5}.Release|ARM.ActiveCfg = Release|ARM
+		{568212F7-43DD-405D-9B51-394C6C8A2AA5}.Release|ARM.Build.0 = Release|ARM
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DD262DB-17FF-4B5C-81AE-4259B9BA8747}
+	EndGlobalSection
+EndGlobal
