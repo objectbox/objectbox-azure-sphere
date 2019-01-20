@@ -34,7 +34,7 @@ First, an instance of the `OBXC_store_options` structure must be created. The fo
 - `user` and `pass`: Username and password, respectively, needed to access the database. May be the empty string if no authentication is needed.
 - `model.data` and `model.size`: For now always `NULL` and `0`, respectively.
 
-After that, an instance of `OBXC_store*` can be created from these options using the function `OBXC_store* obxc_store_open(const OBXC_store_options* options)`. It needs a pointer to a `OBXC_store_options` instance as its first and only parameter. If the return value is `NULL`, creating the instance failed and further information may be obtained using the error handling methods presented below.
+After that, an instance of `OBXC_store*` can be created from these options using the function *`OBXC_store* obxc_store_open(const OBXC_store_options* options)`*. It needs a pointer to a `OBXC_store_options` instance as its first and only parameter. If the return value is `NULL`, creating the instance failed and further information may be obtained using the error handling methods presented below.
 
 Finally, `obxc_store_close` must be used to correctly close the connection and deallocate all data associated with the store instance.
 
@@ -43,23 +43,23 @@ Finally, `obxc_store_close` must be used to correctly close the connection and d
 
 All operations need a valid pointer to a `OBXC_store` instance as their first parameter to unambiguously identify the targeted database.
 
-`obx_err obxc_data_count(OBXC_store* store, int entityId, uint64_t* count)`: Counts the number of entries in the entity with id `entityId` and writes the result to the 64 bit integer value pointed to by `count`.
+*`obx_err obxc_data_count(OBXC_store* store, int entityId, uint64_t* count)`*: Counts the number of entries in the entity with id `entityId` and writes the result to the 64 bit integer value pointed to by `count`.
 
 
 ### Data retrieval
 
-`obx_err obxc_data_get(OBXC_store* store, int entityId, int id, OBXC_bytes* dest)` fetched the serialized FlatBuffers bytes of an entry with id `id` in the entity with id `entityId` into the buffer pointed to by `dest`. The bytes can then be interpreted by feeding them through flatcc. The result eventually needs to be deallocated using `obxc_bytes_free`.
+*`obx_err obxc_data_get(OBXC_store* store, int entityId, int id, OBXC_bytes* dest)`* fetches the serialized FlatBuffers bytes of an entry with id `id` in the entity with id `entityId` into the buffer pointed to by `dest`. The bytes can then be interpreted by feeding them through flatcc. The result eventually needs to be deallocated using `obxc_bytes_free`.
 
-`obx_err obxc_data_get_all(OBXC_store* store, int entityId, OBXC_bytes_array* dest)` is similar to the previous function, but gets all entries associated with one entity. This results also needs to be freed using `obxc_bytes_free`.
+*`obx_err obxc_data_get_all(OBXC_store* store, int entityId, OBXC_bytes_array* dest)`* is similar to the previous function, but gets all entries associated with one entity. This results also needs to be freed using `obxc_bytes_free`.
 
 
 ## Data modification
 
-`obx_err obxc_data_insert(OBXC_store* store, int entityId, const OBXC_bytes* src, int* id)` inserts a chunk of FlatBuffers-serialized data into the entity with id `entityId`. The server will automatically assign a new, unique ID to the inserted entry, which will be returned by setting the integer pointed to by the `id` parameter.
+*`obx_err obxc_data_insert(OBXC_store* store, int entityId, const OBXC_bytes* src, int* id)`* inserts a chunk of FlatBuffers-serialized data into the entity with id `entityId`. The server will automatically assign a new, unique ID to the inserted entry, which will be returned by setting the integer pointed to by the `id` parameter.
 
-`obx_err obxc_data_update(OBXC_store* store, int entityId, int id, const OBXC_bytes* src)` updates an entry in an entity with the given data.
+*`obx_err obxc_data_update(OBXC_store* store, int entityId, int id, const OBXC_bytes* src)`* updates an entry in an entity with the given data.
 
-`obx_err obxc_data_delete(OBXC_store* store, int entityId, int id)` deletes the respective entry from an entity.
+*`obx_err obxc_data_delete(OBXC_store* store, int entityId, int id)`* deletes the respective entry from an entity.
 
 
 ### Error handling
