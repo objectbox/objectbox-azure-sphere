@@ -10,7 +10,7 @@ Next, assuming you have successfully attached the Azure Sphere development board
 
 ## Architecture
 
-![REST connection illustration](misc/rest-connection-illustration.png)
+![REST connection illustration](misc/azure-sphere-1.png)
 
 The image above illustrates how the Azure Sphere board connects to the server and what kind of data is exchanged.
 
