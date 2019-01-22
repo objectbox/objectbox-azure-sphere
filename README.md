@@ -14,7 +14,7 @@ On success, it will output some demo information extracted from the database it 
 
 ## Architecture
 
-![REST connection illustration](misc/azure-sphere-1.png)
+![REST connection illustration](misc/azure-sphere-objectbox.png)
 
 The image above illustrates how the Azure Sphere connects to the server (which also can be a mobile phone) and what kind of data is exchanged.
 
