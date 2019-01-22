@@ -1,4 +1,6 @@
-# ObjectBox REST client for Azure Sphere
+# ObjectBox client for Azure Sphere
+
+For a general introduction to Azure Sphere and use cases in combination with [ObjectBox](https://objectbox.io/), check the [announcement post](https://objectbox.io/objectbox-on-azure-sphere-efficient-handling-of-persistent-iot-data-on-tiny-devices/). 
 
 ## Setup
 
@@ -16,10 +18,13 @@ On success, it will output some demo information extracted from the database it 
 
 ![REST connection illustration](misc/azure-sphere-objectbox.png)
 
-The image above illustrates how the Azure Sphere connects to the server (which also can be a mobile phone) and what kind of data is exchanged.
+The image above illustrates how the Azure Sphere connects to a device running the ObjectBox HTTP server.
+The "server" could also be an app running on a mobile phone;
+example setups include direct connections via Wifi for smart home use cases.
 
-First, note that the HTTP server needs to run on a separate machine.
-This could be a normal PC in the same local network as the Azure Sphere during development, or an actual server with its own IP address or hostname in production.
+During development, you can connect the Azure Sphere dev board to a server running on the development machine PC.
+Just ensure both devices are running the same local network.
+And, of course, you can connect the Azure Sphere to a production server on-premise or in the cloud.
 
 The library `objectbox-client-azure-sphere` provided in this repository then connects to this server and exchanges data with it via a simple REST protocol.
 Specifically, `GET` requests are used to get the number of entries in an entity or get a single or all entries.
