@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{3411110a-18de-40b1-a99c-c4d14075775e}</ProjectGuid>
+    <ProjectGuid>{e5da1ad7-ac16-48c7-94c6-f3673a84b35a}</ProjectGuid>
     <Keyword>AzureSphere</Keyword>
-    <RootNamespace>azure_sphere_test</RootNamespace>
+    <RootNamespace>azure_sphere_sensor_demo</RootNamespace>
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <ApplicationType>Linux</ApplicationType>
     <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
@@ -38,13 +38,13 @@
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
     <ClCompile Include="main.c" />
-    <ClInclude Include="applibs_versions.h" />
-    <ClInclude Include="TestEntity_builder.h" />
-    <ClInclude Include="TestEntity_reader.h" />
+    <ClInclude Include="SensorDemoEntity_builder.h" />
+    <ClInclude Include="SensorDemoEntity_reader.h" />
     <UpToDateCheckInput Include="app_manifest.json" />
     <ClInclude Include="flatbuffers_common_builder.h" />
     <ClInclude Include="flatbuffers_common_reader.h" />
     <ClInclude Include="mt3620_rdb.h" />
+    <ClInclude Include="applibs_versions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

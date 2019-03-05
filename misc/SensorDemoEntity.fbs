@@ -1,0 +1,7 @@
+table SensorDemoEntity {
+    id: ulong;
+    lightIntensity: float;
+    temperature: float;
+    humidity: float;
+    measuredAt: ulong;
+}

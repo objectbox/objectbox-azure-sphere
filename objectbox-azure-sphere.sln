@@ -13,6 +13,15 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "azure-sphere-test", "azure-
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "objectbox-client-azure-sphere", "objectbox-client-azure-sphere\objectbox-client-azure-sphere.vcxproj", "{568212F7-43DD-405D-9B51-394C6C8A2AA5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MT3620_Grove_Shield_Library", "MT3620_Grove_Shield_Library\MT3620_Grove_Shield_Library.vcxproj", "{76A5010F-ABE3-47A0-8884-93B78496275B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "azure-sphere-sensor-demo", "azure-sphere-sensor-demo\azure-sphere-sensor-demo.vcxproj", "{E5DA1AD7-AC16-48C7-94C6-F3673A84B35A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{76A5010F-ABE3-47A0-8884-93B78496275B} = {76A5010F-ABE3-47A0-8884-93B78496275B}
+		{6739E9D3-CE3A-489F-9D54-3366CE91630B} = {6739E9D3-CE3A-489F-9D54-3366CE91630B}
+		{568212F7-43DD-405D-9B51-394C6C8A2AA5} = {568212F7-43DD-405D-9B51-394C6C8A2AA5}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -31,6 +40,14 @@ Global
 		{568212F7-43DD-405D-9B51-394C6C8A2AA5}.Debug|ARM.Build.0 = Debug|ARM
 		{568212F7-43DD-405D-9B51-394C6C8A2AA5}.Release|ARM.ActiveCfg = Release|ARM
 		{568212F7-43DD-405D-9B51-394C6C8A2AA5}.Release|ARM.Build.0 = Release|ARM
+		{76A5010F-ABE3-47A0-8884-93B78496275B}.Debug|ARM.ActiveCfg = Debug|ARM
+		{76A5010F-ABE3-47A0-8884-93B78496275B}.Debug|ARM.Build.0 = Debug|ARM
+		{76A5010F-ABE3-47A0-8884-93B78496275B}.Release|ARM.ActiveCfg = Release|ARM
+		{76A5010F-ABE3-47A0-8884-93B78496275B}.Release|ARM.Build.0 = Release|ARM
+		{E5DA1AD7-AC16-48C7-94C6-F3673A84B35A}.Debug|ARM.ActiveCfg = Debug|ARM
+		{E5DA1AD7-AC16-48C7-94C6-F3673A84B35A}.Debug|ARM.Build.0 = Debug|ARM
+		{E5DA1AD7-AC16-48C7-94C6-F3673A84B35A}.Release|ARM.ActiveCfg = Release|ARM
+		{E5DA1AD7-AC16-48C7-94C6-F3673A84B35A}.Release|ARM.Build.0 = Release|ARM
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Common">
+      <UniqueIdentifier>{608725fe-d63f-4c24-93e4-8fdc986ff9fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\HAL">
+      <UniqueIdentifier>{04c359ab-3749-4095-a359-d2123754c551}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Sensors">
+      <UniqueIdentifier>{bc0eb73f-b1c0-4987-818b-cae1faaf6dc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Common">
+      <UniqueIdentifier>{32fd7409-509c-4a24-96d6-37d8f93f3280}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HAL">
+      <UniqueIdentifier>{475b58ef-98d8-4e23-9caf-b35fdedb26fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sensors">
+      <UniqueIdentifier>{8c14558e-aefc-46df-af43-66ba64b3355a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="applibs_versions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Grove.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mt3620_rdb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Delay.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="HAL\GroveI2C.h">
+      <Filter>Header Files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="HAL\GroveShield.h">
+      <Filter>Header Files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="HAL\GroveUART.h">
+      <Filter>Header Files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="Sensors\Grove4DigitDisplay.h">
+      <Filter>Header Files\Sensors</Filter>
+    </ClInclude>
+    <ClInclude Include="Sensors\GroveAD7992.h">
+      <Filter>Header Files\Sensors</Filter>
+    </ClInclude>
+    <ClInclude Include="Sensors\GroveLEDButton.h">
+      <Filter>Header Files\Sensors</Filter>
+    </ClInclude>
+    <ClInclude Include="Sensors\GroveLightSensor.h">
+      <Filter>Header Files\Sensors</Filter>
+    </ClInclude>
+    <ClInclude Include="Sensors\GroveOledDisplay96x96.h">
+      <Filter>Header Files\Sensors</Filter>
+    </ClInclude>
+    <ClInclude Include="Sensors\GroveRelay.h">
+      <Filter>Header Files\Sensors</Filter>
+    </ClInclude>
+    <ClInclude Include="Sensors\GroveRotaryAngleSensor.h">
+      <Filter>Header Files\Sensors</Filter>
+    </ClInclude>
+    <ClInclude Include="Sensors\GroveTempHumiBaroBME280.h">
+      <Filter>Header Files\Sensors</Filter>
+    </ClInclude>
+    <ClInclude Include="Sensors\GroveTempHumiSHT31.h">
+      <Filter>Header Files\Sensors</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Common\Delay.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="HAL\GroveI2C.c">
+      <Filter>Source Files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="HAL\GroveShield.c">
+      <Filter>Source Files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="HAL\GroveUART.c">
+      <Filter>Source Files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="Sensors\Grove4DigitDisplay.c">
+      <Filter>Source Files\Sensors</Filter>
+    </ClCompile>
+    <ClCompile Include="Sensors\GroveAD7992.c">
+      <Filter>Source Files\Sensors</Filter>
+    </ClCompile>
+    <ClCompile Include="Sensors\GroveLEDButton.c">
+      <Filter>Source Files\Sensors</Filter>
+    </ClCompile>
+    <ClCompile Include="Sensors\GroveLightSensor.c">
+      <Filter>Source Files\Sensors</Filter>
+    </ClCompile>
+    <ClCompile Include="Sensors\GroveOledDisplay96x96.c">
+      <Filter>Source Files\Sensors</Filter>
+    </ClCompile>
+    <ClCompile Include="Sensors\GroveRelay.c">
+      <Filter>Source Files\Sensors</Filter>
+    </ClCompile>
+    <ClCompile Include="Sensors\GroveRotaryAngleSensor.c">
+      <Filter>Source Files\Sensors</Filter>
+    </ClCompile>
+    <ClCompile Include="Sensors\GroveTempHumiBaroBME280.c">
+      <Filter>Source Files\Sensors</Filter>
+    </ClCompile>
+    <ClCompile Include="Sensors\GroveTempHumiSHT31.c">
+      <Filter>Source Files\Sensors</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -18,6 +18,9 @@
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClInclude Include="applibs_versions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <UpToDateCheckInput Include="app_manifest.json" />
   </ItemGroup>
   <ItemGroup>
@@ -30,13 +33,10 @@
     <ClInclude Include="flatbuffers_common_reader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TestEntity_builder.h">
+    <ClInclude Include="SensorDemoEntity_builder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TestEntity_reader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="applibs_versions.h">
+    <ClInclude Include="SensorDemoEntity_reader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

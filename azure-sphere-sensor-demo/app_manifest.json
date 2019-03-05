@@ -1,0 +1,19 @@
+{
+  "SchemaVersion": 1,
+  "Name" : "azure_sphere_sensor_demo",
+  "ComponentId" : "0b71c03d-369f-4695-8535-de43eb19e46e",
+  "EntryPoint": "/bin/app",
+  "CmdArgs": [],
+    "Capabilities": {
+        "AllowedConnections": [ "192.168.178.54" ],
+        "AllowedTcpServerPorts": [],
+        "AllowedUdpServerPorts": [],
+        "Gpio": [ 8, 9, 10, 15, 16, 17, 18, 19, 20, 12, 13, 0, 1, 4, 5, 57, 58, 11, 14, 48 ],
+        "Uart": [ "ISU0", "ISU3" ],
+        "I2cMaster": [],
+        "SpiMaster": [],
+        "WifiConfig": false,
+        "NetworkConfig": false,
+        "SystemTime": false
+    }
+}
