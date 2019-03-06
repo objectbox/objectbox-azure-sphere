@@ -6,6 +6,14 @@ CFLAGS = -Iinclude -Llib -Wl,-rpath,\$${ORIGIN}/../lib
 
 all: sensor-demo-db compression-demo-db
 
+test-db: lib/libobjectbox.so src/test-entity.c
+	mkdir -p bin
+	gcc $(CFLAGS) src/test-entity.c -o bin/test-entity -lobjectbox
+	bin/test-entity
+	rm -rf bin
+	rm -rf dbs/test-db
+	mv objectbox dbs/test-db
+
 sensor-demo-db: lib/libobjectbox.so src/sensor-demo-entity.c
 	mkdir -p bin
 	gcc $(CFLAGS) src/sensor-demo-entity.c -o bin/sensor-demo-entity -lobjectbox
@@ -22,14 +30,17 @@ compression-demo-db: lib/libobjectbox.so src/compression-demo-entity.c
 	rm -rf dbs/compression-demo-db
 	mv objectbox dbs/compression-demo-db
 
-http-server-sensor: sensor-demo-db
+http-server-test: test-db
+	$(HTTP_SERVER) dbs/test-db $(HTTP_PORT)
+
+http-server-sensor-demo: sensor-demo-db
 	$(HTTP_SERVER) dbs/sensor-demo-db $(HTTP_PORT)
 
-http-server-compression: compression-demo-db
+http-server-compression-demo: compression-demo-db
 	$(HTTP_SERVER) dbs/compression-demo-db $(HTTP_PORT)
 
 lib/libobjectbox.so:
 	./download.sh
 	rm -rf download
 
-.PHONY: sensor-demo-db compression-demo-db
+.PHONY: test-db sensor-demo-db compression-demo-db
