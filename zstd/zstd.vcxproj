@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Inc\Public\zstd.h" />
+    <ClInclude Include="src\common\bitstream.h" />
+    <ClInclude Include="src\common\compiler.h" />
+    <ClInclude Include="src\common\cpu.h" />
+    <ClInclude Include="src\common\debug.h" />
+    <ClInclude Include="src\common\error_private.h" />
+    <ClInclude Include="src\common\fse.h" />
+    <ClInclude Include="src\common\huf.h" />
+    <ClInclude Include="src\common\mem.h" />
+    <ClInclude Include="src\common\pool.h" />
+    <ClInclude Include="src\common\threading.h" />
+    <ClInclude Include="src\common\xxhash.h" />
+    <ClInclude Include="src\common\zstd_errors.h" />
+    <ClInclude Include="src\common\zstd_internal.h" />
+    <ClInclude Include="src\compress\hist.h" />
+    <ClInclude Include="src\compress\zstdmt_compress.h" />
+    <ClInclude Include="src\compress\zstd_compress_internal.h" />
+    <ClInclude Include="src\compress\zstd_double_fast.h" />
+    <ClInclude Include="src\compress\zstd_fast.h" />
+    <ClInclude Include="src\compress\zstd_lazy.h" />
+    <ClInclude Include="src\compress\zstd_ldm.h" />
+    <ClInclude Include="src\compress\zstd_opt.h" />
+    <ClInclude Include="src\decompress\zstd_ddict.h" />
+    <ClInclude Include="src\decompress\zstd_decompress_block.h" />
+    <ClInclude Include="src\decompress\zstd_decompress_internal.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\common\debug.c" />
+    <ClCompile Include="src\common\entropy_common.c" />
+    <ClCompile Include="src\common\error_private.c" />
+    <ClCompile Include="src\common\fse_decompress.c" />
+    <ClCompile Include="src\common\pool.c" />
+    <ClCompile Include="src\common\threading.c" />
+    <ClCompile Include="src\common\xxhash.c" />
+    <ClCompile Include="src\common\zstd_common.c" />
+    <ClCompile Include="src\compress\fse_compress.c" />
+    <ClCompile Include="src\compress\hist.c" />
+    <ClCompile Include="src\compress\huf_compress.c" />
+    <ClCompile Include="src\compress\zstdmt_compress.c" />
+    <ClCompile Include="src\compress\zstd_compress.c" />
+    <ClCompile Include="src\compress\zstd_double_fast.c" />
+    <ClCompile Include="src\compress\zstd_fast.c" />
+    <ClCompile Include="src\compress\zstd_lazy.c" />
+    <ClCompile Include="src\compress\zstd_ldm.c" />
+    <ClCompile Include="src\compress\zstd_opt.c" />
+    <ClCompile Include="src\decompress\huf_decompress.c" />
+    <ClCompile Include="src\decompress\zstd_ddict.c" />
+    <ClCompile Include="src\decompress\zstd_decompress.c" />
+    <ClCompile Include="src\decompress\zstd_decompress_block.c" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9489ed76-0e5c-4dcd-8cdb-c360cef3450b}</ProjectGuid>
+    <Keyword>AzureSphere</Keyword>
+    <RootNamespace>zstd</RootNamespace>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <ApplicationType>Linux</ApplicationType>
+    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+    <TargetLinuxPlatform>Generic</TargetLinuxPlatform>
+    <LinuxProjectType>{D51BCBC9-82E9-4017-911E-C93873C4EA2B}</LinuxProjectType>
+    <DebugMachineType>Device</DebugMachineType>
+    <PlatformToolset>GCC_AzureSphere_1_0</PlatformToolset>
+    <ProjectPublicIncludePath>$(MSBuildProjectDirectory)\Inc\Public</ProjectPublicIncludePath>
+    <PublicIncludePath>$(MSBuildProjectDirectory)\Inc\Public</PublicIncludePath>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <TargetSysroot>1</TargetSysroot>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <TargetSysroot>1</TargetSysroot>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalOptions>-Werror=implicit-function-declaration %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(SysRootIncludePath);%(AdditionalIncludeDirectories);./src/common</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
