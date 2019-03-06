@@ -21,7 +21,8 @@ int main(int argc, char** argv) {
 			obx_model_property_flags(model, OBXPropertyFlags_ID);
 		obx_model_property(model, "timestamp", OBXPropertyType_Date, 2, 100010002);
 		obx_model_property(model, "userData", OBXPropertyType_ByteVector, 3, 100010003);
-		obx_model_entity_last_property_id(model, 3, 100010003);
+		obx_model_property(model, "userStrings", OBXPropertyType_StringVector, 4, 100010004);
+		obx_model_entity_last_property_id(model, 4, 100010004);
 	obx_model_last_entity_id(model, compression_demo_entity_id, 10001);
 	
 	// create store to write the model to a new MDB directory
