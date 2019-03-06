@@ -1,0 +1,19 @@
+{
+  "SchemaVersion": 1,
+  "Name" : "azure_sphere_compression_demo",
+  "ComponentId" : "5ed05727-5b13-4575-8e06-da7ee44b52a1",
+  "EntryPoint": "/bin/app",
+  "CmdArgs": [],
+  "Capabilities": {
+    "AllowedConnections": [ "192.168.178.54" ],
+    "AllowedTcpServerPorts": [],
+    "AllowedUdpServerPorts": [],
+    "Gpio": [],
+    "Uart": [],
+    "I2cMaster": [],
+    "SpiMaster": [],
+    "WifiConfig": false,
+    "NetworkConfig": false,
+    "SystemTime": false
+  }
+}

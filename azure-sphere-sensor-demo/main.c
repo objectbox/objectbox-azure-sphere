@@ -4,6 +4,7 @@
 #include <string.h>
 #include <time.h>
 #include <inttypes.h>
+#include <math.h>
 
 #include "applibs_versions.h"
 #include "mt3620_rdb.h"
@@ -41,11 +42,10 @@ void fail_with_output(const char* msg) {
 	exit(1);
 }
 
-char* data_hex_string(OBXC_bytes* mem) {
-	char* ret = (char*)malloc(mem->size * 2 + 1);
-	for (int i = 0; i < mem->size; ++i)
-		snprintf(ret + i * 2, 3, "%02x", ((char*)mem->data)[i] & 0xFF);
-	return ret;
+float fix_float(float x) {
+	if (isinf(x) || isnan(x))
+		return 0.0f;
+	return x;
 }
 
 uint64_t get_current_time_ns() {
