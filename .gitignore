@@ -1,6 +1,7 @@
 .vs
 */bin
 */obj
+misc/demo-db-creator/lib
 
 # CLion
 .idea/
