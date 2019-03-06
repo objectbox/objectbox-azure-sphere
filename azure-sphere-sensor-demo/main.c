@@ -105,7 +105,7 @@ int main(int argc, char *argv[]) {
 	GroveShield_Initialize(&i2c_fd, 115200);
 	void* light_sensor = GroveLightSensor_Init(i2c_fd, 0);
 	void* temp_humi_sensor = GroveTempHumiSHT31_Open(i2c_fd);
-	for (int i = 0; i < 10; ++i) {
+	while(1) {
 		GroveTempHumiSHT31_Read(temp_humi_sensor);
 		transmit_sensor_values(store, GroveAD7992_ConvertToMillisVolt(GroveLightSensor_Read(light_sensor)), GroveTempHumiSHT31_GetTemperature(temp_humi_sensor), GroveTempHumiSHT31_GetHumidity(temp_humi_sensor));
 		usleep(500000);
