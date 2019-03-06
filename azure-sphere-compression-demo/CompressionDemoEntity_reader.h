@@ -41,6 +41,7 @@ __flatbuffers_table_as_root(CompressionDemoEntity)
 __flatbuffers_define_scalar_field(0, CompressionDemoEntity, id, flatbuffers_uint64, uint64_t, UINT64_C(0))
 __flatbuffers_define_scalar_field(1, CompressionDemoEntity, timestamp, flatbuffers_uint64, uint64_t, UINT64_C(0))
 __flatbuffers_define_vector_field(2, CompressionDemoEntity, userData, flatbuffers_int8_vec_t, 0)
+__flatbuffers_define_vector_field(3, CompressionDemoEntity, userStrings, flatbuffers_string_vec_t, 0)
 
 #include "flatcc/flatcc_epilogue.h"
 #endif /* COMPRESSIONDEMOENTITY_READER_H */
