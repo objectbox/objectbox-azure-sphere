@@ -1,0 +1,51 @@
+process 260
+Name:	app
+Umask:	0022
+State:	t (tracing stop)
+Tgid:	260
+Ngid:	0
+Pid:	260
+PPid:	257
+TracerPid:	257
+Uid:	1015	1015	1015	1015
+Gid:	1015	1015	1015	1015
+FDSize:	32
+Groups:	 
+NStgid:	260
+NSpid:	260
+NSpgid:	260
+NSsid:	0
+VmPeak:	    2108 kB
+VmSize:	    2108 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	     100 kB
+VmRSS:	     100 kB
+RssAnon:	     100 kB
+RssFile:	       0 kB
+RssShmem:	       0 kB
+VmData:	      84 kB
+VmStk:	     100 kB
+VmExe:	     476 kB
+VmLib:	    1444 kB
+VmPTE:	       6 kB
+VmPMD:	       0 kB
+VmSwap:	       0 kB
+Threads:	1
+SigQ:	1/54
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000200000000
+SigCgt:	0000000000004000
+CapInh:	0000000000000000
+CapPrm:	0000000000000000
+CapEff:	0000000000000000
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+
+Speculation_Store_Bypass:	unknown
+Cpus_allowed:	1
+Cpus_allowed_list:	0
+voluntary_ctxt_switches:	7
+nonvoluntary_ctxt_switches:	8
