@@ -4,7 +4,7 @@ HTTP_PORT = 8181
 
 CFLAGS = -Iinclude -Llib -Wl,-rpath,\$${ORIGIN}/../lib
 
-all: sensor-demo-db compression-demo-db
+all: test-db sensor-demo-db compression-demo-db
 
 test-db: lib/libobjectbox.so src/test-entity.c
 	mkdir -p bin
