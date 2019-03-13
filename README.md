@@ -22,6 +22,8 @@ The other project is `azure-sphere-compression-demo`. It demonstrates how serial
 
 For this task, the small C application in `misc/demo-db-creator` exists. First, run `download.sh` in there to automatically download the ObjectBox libraries, and then `make test-db`, `make sensor-demo-db` or `make compression-demo-db`. These Make targets automatically create the respective directories in `misc/demo-db-creator/dbs` and populate them with empty databases with the desired schema.
 
+You don't need to do this to setup the project, as the directory `misc/demo-db-creator/dbs` already contains all three empty demo databases.
+
 Note that creating new schemes is a bit cumbersome. To do that, you need to execute the following steps:
 
 1. Create the desired Flatbuffers schema file as a FBS-file, just like in [`misc/TestEntity.fbs`](misc/TestEntity.fbs) for example.
@@ -30,7 +32,7 @@ Note that creating new schemes is a bit cumbersome. To do that, you need to exec
 
 ### Running the HTTP server
 
-After creating an empty database, you can run the HTTP server with that. To do that, run `download.sh` in this project's root directory, then execute `http-server/objectbox-http-server misc/demo-db-creator/dbs/test-db 8181` depending on which location you chose for your database and which port you'd like to use (8181 is the default for all Azure Sphere demo applications in this repository).
+After creating an empty database (or just taking the ones provided already), you can run the HTTP server with that. To do that, run `download.sh` in this project's root directory, then execute `http-server/objectbox-http-server misc/demo-db-creator/dbs/test-db 8181` depending on which location you chose for your database and which port you'd like to use (8181 is the default for all Azure Sphere demo applications in this repository).
 
 
 
