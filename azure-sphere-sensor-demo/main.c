@@ -74,7 +74,7 @@ void transmit_sensor_values(OBXC_store* store, float light_intensity, float temp
 	// finish populating the entity's attributes and insert it at the server
 	SensorDemoEntity_end_as_root(&builder);
 	mem.data = flatcc_builder_get_direct_buffer(&builder, &mem.size);
-	obxc_data_insert(store, 1, &mem, &new_id);
+	obxc_data_insert(store, 2, &mem, &new_id);
 	Log_Debug("inserted new item with %d bytes, it got id %d\n", mem.size, new_id);
 }
 
