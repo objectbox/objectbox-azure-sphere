@@ -18,7 +18,7 @@ Now, you're ready to check out the other demo project, `azure-sphere-sensor-demo
 
 ### Running the HTTP server
 
-To download and run the HTTP server, run `download.sh` in this project's root directory, then execute `http-server/objectbox-http-server 8181`, depending on which port you would like to use. Note that ObjectBox will create the database files (i.e. `data.mdb` and `lock.mdb`) in the current directory, so feel free to call the HTTP server from another directory if you prefer. Additionally, if these database files already exist in the current directory, they will be reused, i.e. none of their data is lost.
+To download and run the HTTP server, run `./download.sh` in this project's root directory on Linux or `download.bat` on Windows, then execute `http-server/objectbox-http-server 8181` or `http-server/objectbox-http-server.exe 8181`, depending on which port you would like to use. Note that ObjectBox will create the database files (i.e. `data.mdb` and `lock.mdb`) in the current directory, so feel free to call the HTTP server from another directory if you prefer. Additionally, if these database files already exist in the current directory, they will be reused, i.e. none of their data is lost.
 
 Note that the HTTP server automatically creates the `TestEntity` and `SensorDemoEntity` entities in every newly created database, thus you can immediately start running the demo projects.
 
