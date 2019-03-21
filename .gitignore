@@ -1,8 +1,10 @@
 .vs
+.vscode
 */bin
 */obj
 misc/demo-db-creator/lib
 misc/demo-db-creator/dbs
+oldprojects
 
 # CLion
 .idea/
