@@ -6,7 +6,7 @@ For a general introduction to Azure Sphere and use cases in combination with [Ob
 
 For setting up the basic environment, please check out [the official installation instructions](https://docs.microsoft.com/en-us/azure-sphere/install/overview) for Azure Sphere by Microsoft.
 
-Before running the demo application on the Azure Sphere development board, you need to start the ObjectBox HTTP database server with a database that has a schema which complies with the one in [`misc/TestEntity.fbs`](misc/TestEntity.fbs). Please see below for instructions on that.
+Before running the demo application on the Azure Sphere development board, you need to start the ObjectBox HTTP database server. Please see below for instructions on that.
 After that, identify the server machine's IP address and edit the value of [`Capabilities.AllowedConnections` in `app_manifest.json`](azure-sphere-test/app_manifest.json#L8).
 Because of its internal security features, the Azure Sphere device lets the demo application connect only to the IP addresses and hostnames specified here.
 
@@ -14,27 +14,15 @@ Next, assuming you have successfully attached the Azure Sphere development board
 Finally, open the `azure-sphere-test` project, edit the `OBX_TEST_SERVER_IP` define in `main.c` accordingly and run it.
 On success, it will output some demo information extracted from the database it connected to.
 
-Now, you're ready to check out the other two demo projects, e.g. `azure-sphere-sensor-demo`. Assuming you already bought and connected the [_Grove Starter Kit for Azure Sphere_](https://www.seeedstudio.com/Grove-Starter-Kit-for-Azure-Sphere-MT3620-Development-Kit-p-3150.html), this project allows you to read out light, temperature and humidity data and store them in a database. Note that the database the server writes to has to have the [`SensorDemoEntity`](misc/SensorDemoEntity.fbs) schema.
-
-The other project is `azure-sphere-compression-demo`. It demonstrates how serialized Flatbuffers data sent to the server can also be compressed. Right now, the HTTP server does not support that though, it's rather a demo of how libraries like Zstandard can be integrated into an Azure Sphere application. For reference, this demo uses the [`CompressionDemoEntity`](misc/CompressionDemoEntity.fbs) schema.
-
-### Creating empty demo databases
-
-For this task, the small C application in `misc/demo-db-creator` exists. First, run `download.sh` in there to automatically download the ObjectBox libraries, and then `make test-db`, `make sensor-demo-db` or `make compression-demo-db`. These Make targets automatically create the respective directories in `misc/demo-db-creator/dbs` and populate them with empty databases with the desired schema.
-
-You don't need to do this to setup the project, as the directory `misc/demo-db-creator/dbs` already contains all three empty demo databases.
-
-Note that creating new schemes is a bit cumbersome. To do that, you need to execute the following steps:
-
-1. Create the desired Flatbuffers schema file as a FBS-file, just like in [`misc/TestEntity.fbs`](misc/TestEntity.fbs) for example.
-2. Compile this schema into C files that can later be used by Azure Sphere itself. This requires the [`flatcc`](https://github.com/dvidelabs/flatcc#quickstart) utility, e.g. the command `flatcc MyNewEntity.fbs -a` and from the result you need the four files `flatbuffers_common_builder.h`, `flatbuffers_common_reader.h`, `MyNewEntity_builder.h` and `MyNewEntity_reader.h` to be part of your final Azure Sphere project.
-3. Translate your initial schema into ObjectBox C code, similarly to the one found in [`misc/demo-db-creator/src/test-entity.c`](misc/demo-db-creator/src/test-entity.c). Upon executing this program after compilation, it creates a directory called `objectbox`. You can rename that if you want, just do not touch the files `data.mdb` and `lock.mdb` in it. The Makefile automizes all of that, i.e. you directly get the directory `misc/demo-db-creator/dbs/test-db` for example.
+Now, you're ready to check out the other demo project, `azure-sphere-sensor-demo`. Assuming you already bought and connected the [_Grove Starter Kit for Azure Sphere_](https://www.seeedstudio.com/Grove-Starter-Kit-for-Azure-Sphere-MT3620-Development-Kit-p-3150.html), this project allows you to read out light, temperature and humidity data and store them in a database. Note that the server will write to the [`SensorDemoEntity`](misc/SensorDemoEntity.fbs) table here.
 
 ### Running the HTTP server
 
-After creating an empty database (or just taking the ones provided already), you can run the HTTP server with that. To do that, run `download.sh` in this project's root directory, then execute `http-server/objectbox-http-server misc/demo-db-creator/dbs/test-db 8181` depending on which location you chose for your database and which port you'd like to use (8181 is the default for all Azure Sphere demo applications in this repository).
+To download and run the HTTP server, run `download.sh` in this project's root directory, then execute `http-server/objectbox-http-server 8181`, depending on which port you would like to use. Note that ObjectBox will create the database files (i.e. `data.mdb` and `lock.mdb`) in the current directory, so feel free to call the HTTP server from another directory if you prefer. Additionally, if these database files already exist in the current directory, they will be reused, i.e. none of their data is lost.
 
+Note that the HTTP server automatically creates the `TestEntity` and `SensorDemoEntity` entities in every newly created database, thus you can immediately start running the demo projects.
 
+You can also look at the data currently residing in the database by using the ObjectBox Browser: just enter `http://localhost:8181` (of course depending on which port you chose) into the URL bar of a web browser of your choice.
 
 ## Architecture
 
