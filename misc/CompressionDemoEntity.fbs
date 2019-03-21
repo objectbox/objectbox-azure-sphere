@@ -1,6 +1,0 @@
-table CompressionDemoEntity {
-    id: ulong;
-    timestamp: ulong;
-    userData: [byte];
-    userStrings: [string];
-}

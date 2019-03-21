@@ -24,13 +24,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "azure-sphere-sensor-demo", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zstd", "zstd\zstd.vcxproj", "{9489ED76-0E5C-4DCD-8CDB-C360CEF3450B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "azure-sphere-compression-demo", "azure-sphere-compression-demo\azure-sphere-compression-demo.vcxproj", "{641D3C14-C507-4C0B-A94E-4F721D330957}"
-	ProjectSection(ProjectDependencies) = postProject
-		{9489ED76-0E5C-4DCD-8CDB-C360CEF3450B} = {9489ED76-0E5C-4DCD-8CDB-C360CEF3450B}
-		{6739E9D3-CE3A-489F-9D54-3366CE91630B} = {6739E9D3-CE3A-489F-9D54-3366CE91630B}
-		{568212F7-43DD-405D-9B51-394C6C8A2AA5} = {568212F7-43DD-405D-9B51-394C6C8A2AA5}
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -61,10 +54,6 @@ Global
 		{9489ED76-0E5C-4DCD-8CDB-C360CEF3450B}.Debug|ARM.Build.0 = Debug|ARM
 		{9489ED76-0E5C-4DCD-8CDB-C360CEF3450B}.Release|ARM.ActiveCfg = Release|ARM
 		{9489ED76-0E5C-4DCD-8CDB-C360CEF3450B}.Release|ARM.Build.0 = Release|ARM
-		{641D3C14-C507-4C0B-A94E-4F721D330957}.Debug|ARM.ActiveCfg = Debug|ARM
-		{641D3C14-C507-4C0B-A94E-4F721D330957}.Debug|ARM.Build.0 = Debug|ARM
-		{641D3C14-C507-4C0B-A94E-4F721D330957}.Release|ARM.ActiveCfg = Release|ARM
-		{641D3C14-C507-4C0B-A94E-4F721D330957}.Release|ARM.Build.0 = Release|ARM
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
