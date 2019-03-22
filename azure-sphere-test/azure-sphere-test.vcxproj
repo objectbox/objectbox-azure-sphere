@@ -51,12 +51,12 @@
   <ItemDefinitionGroup>
     <ClCompile>
       <AdditionalOptions>-Werror=implicit-function-declaration -Wno-strict-prototypes -Wno-sign-conversion %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(SysRootIncludePath);%(AdditionalIncludeDirectories);../objectbox-client-azure-sphere/Inc/Public;../flatcc/Inc/Public;../MT3620_Grove_Shield_Library</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(SysRootIncludePath);%(AdditionalIncludeDirectories);../objectbox-client-azure-sphere/Inc/Public;../external/flatcc/Inc/Public;../external/MT3620_Grove_Shield_Library</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <LibraryDependencies>applibs;pthread;gcc_s;c;objectbox-client-azure-sphere;flatcc;curl;MT3620_Grove_Shield_Library</LibraryDependencies>
       <AdditionalOptions>-Wl,--no-undefined -nodefaultlibs %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">%(AdditionalLibraryDirectories);../objectbox-client-azure-sphere/bin/ARM/Debug;../flatcc/bin/ARM/Debug;../MT3620_Grove_Shield_Library/bin/ARM/Debug</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">%(AdditionalLibraryDirectories);../objectbox-client-azure-sphere/bin/ARM/Debug;../external/flatcc/bin/ARM/Debug;../external/MT3620_Grove_Shield_Library/bin/ARM/Debug</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
 </Project>

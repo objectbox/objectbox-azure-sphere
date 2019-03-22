@@ -1,7 +1,7 @@
 .vs
 .vscode
-*/bin
-*/obj
+**/bin
+**/obj
 misc/demo-db-creator/lib
 misc/demo-db-creator/dbs
 oldprojects
