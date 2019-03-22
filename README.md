@@ -24,7 +24,7 @@ Note that steps 1 to 3 can be done on Linux or Windows; steps 4 to 8 strictly re
 After having successfully run the demo, you are ready to check out the other demo project, `azure-sphere-sensor-demo`:
 
 1. Buy the [_Grove Starter Kit for Azure Sphere_](https://www.seeedstudio.com/Grove-Starter-Kit-for-Azure-Sphere-MT3620-Development-Kit-p-3150.html) and connect it to your Azure Sphere board. Also attach the light and temperature/humidity sensors.
-2. Repeat steps 5 and 6 from the setup instruction above.
+2. Repeat steps 5 and 6 from the setup instruction above for the respective files in the `azure-sphere-sensor-demo` project.
 3. Run the `azure-sphere-sensor-demo` project. It will continously read from the attached sensors and write the values, together with the current timestamp, to the HTTP server's database.
 
 ### Working with the HTTP server
@@ -121,6 +121,11 @@ See the [demo application's source](azure-sphere-test/main.c) for a detailed exa
 Note that all operations use the secondary error and the error message to store errors returned by the HTTP server.
 This is, a HTTP code and a message explaining why the server rejected your request.
 
+# Used libraries
+
+- _MT3620 Grove Shield_, Copyright 2018 Seeed Studio, License [here](external/MT3620_Grove_Shield_Library/LICENSE.txt)
+- _flatcc_, Copyright 2015 Mikkel F. Jørgensen, dvide.com, License [here](external/flatcc/LICENSE.txt)
+
 # License
 
     Copyright 2019 ObjectBox Ltd. All rights reserved.
@@ -136,8 +141,3 @@ This is, a HTTP code and a message explaining why the server rejected your reque
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
-# Used libraries
-
-- _MT3620 Grove Shield_, Copyright 2018 Seeed Studio, License [here](MT3620_Grove_Shield_Library/LICENSE.txt)
-- _flatcc_, Copyright 2015 Mikkel F. Jørgensen, dvide.com, License [here](flatcc/LICENSE.txt)
