@@ -7,7 +7,7 @@ For a general introduction to Azure Sphere and use cases in combination with [Ob
 For setting up the basic environment, please check out [the official installation instructions](https://docs.microsoft.com/en-us/azure-sphere/install/overview) for Azure Sphere by Microsoft. Next, do the following to run the demo project `azure-sphere-test`:
 
 1. Download the HTTP server by running `./download.sh` on Linux or `download.bat` on Windows in this project's root directory.
-2. Execute `http-server/objectbox-http-server 8181` on Linux or `http-server/objectbox-http-server.exe 8181` on Windows.
+2. Execute `http-server/objectbox-http-server 8181` on Linux or `http-server\objectbox-http-server.exe 8181` on Windows.
 3. Identify the local IP address of the computer you just started the server on.
 4. Open this project's `objectbox-azure-sphere.sln` solution in Visual Studio.
 5. Edit the value of [`Capabilities.AllowedConnections` in `azure-sphere-test/app_manifest.json`](azure-sphere-test/app_manifest.json#L8) to contain your IP address instead.
