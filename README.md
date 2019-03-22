@@ -4,23 +4,34 @@ For a general introduction to Azure Sphere and use cases in combination with [Ob
 
 ## Setup
 
-For setting up the basic environment, please check out [the official installation instructions](https://docs.microsoft.com/en-us/azure-sphere/install/overview) for Azure Sphere by Microsoft.
+For setting up the basic environment, please check out [the official installation instructions](https://docs.microsoft.com/en-us/azure-sphere/install/overview) for Azure Sphere by Microsoft. Next, do the following to run the demo project `azure-sphere-test`:
 
-Before running the demo application on the Azure Sphere development board, you need to start the ObjectBox HTTP database server. Please see below for instructions on that.
-After that, identify the server machine's IP address and edit the value of [`Capabilities.AllowedConnections` in `app_manifest.json`](azure-sphere-test/app_manifest.json#L8).
-Because of its internal security features, the Azure Sphere device lets the demo application connect only to the IP addresses and hostnames specified here.
+1. Download the HTTP server by running `./download.sh` on Linux or `download.bat` on Windows in this project's root directory.
+2. Execute `http-server/objectbox-http-server 8181` on Linux or `http-server/objectbox-http-server.exe 8181` on Windows.
+3. Identify the local IP address of the computer you just started the server on.
+4. Open this project's `objectbox-azure-sphere.sln` solution in Visual Studio.
+5. Edit the value of [`Capabilities.AllowedConnections` in `azure-sphere-test/app_manifest.json`](azure-sphere-test/app_manifest.json#L8) to contain your IP address instead.
+6. Set the value of the [`OBX_TEST_SERVER_IP` define in `azure-sphere-test/main.c`](azure-sphere-test/main.c#L19) to your IP address as well.
+7. Connect the Azure Sphere board to your computer and make sure it's in the same local network.
+8. Run the `azure-sphere-test` project, i.e. click on the _Remote GDB Debugger_ button in Visual Studio. After a short time, the application will start on the Azure Sphere board and some unit test results are output.
 
-Next, assuming you have successfully attached the Azure Sphere development board to your computer, and it's connected to the internet or local network, you can open this project's `objectbox-azure-sphere.sln` solution in Visual Studio.
-Finally, open the `azure-sphere-test` project, edit the `OBX_TEST_SERVER_IP` define in `main.c` accordingly and run it.
-On success, it will output some demo information extracted from the database it connected to.
+Note that steps 1 to 3 can be done on Linux or Windows; steps 4 to 8 strictly require Windows because of Visual Studio. Also, these two sections do not need to be executed on the same computer.
 
-Now, you're ready to check out the other demo project, `azure-sphere-sensor-demo`. Assuming you already bought and connected the [_Grove Starter Kit for Azure Sphere_](https://www.seeedstudio.com/Grove-Starter-Kit-for-Azure-Sphere-MT3620-Development-Kit-p-3150.html), this project allows you to read out light, temperature and humidity data and store them in a database. Note that the server will write to the [`SensorDemoEntity`](misc/SensorDemoEntity.fbs) table here.
+## Next steps
 
-### Running the HTTP server
+### The sensor demo
 
-To download and run the HTTP server, run `./download.sh` in this project's root directory on Linux or `download.bat` on Windows, then execute `http-server/objectbox-http-server 8181` or `http-server/objectbox-http-server.exe 8181`, depending on which port you would like to use. Note that ObjectBox will create the database files (i.e. `data.mdb` and `lock.mdb`) in the current directory, so feel free to call the HTTP server from another directory if you prefer. Additionally, if these database files already exist in the current directory, they will be reused, i.e. none of their data is lost.
+After having successfully run the demo, you are ready to check out the other demo project, `azure-sphere-sensor-demo`:
 
-Note that the HTTP server automatically creates the `TestEntity` and `SensorDemoEntity` entities in every newly created database, thus you can immediately start running the demo projects.
+1. Buy the [_Grove Starter Kit for Azure Sphere_](https://www.seeedstudio.com/Grove-Starter-Kit-for-Azure-Sphere-MT3620-Development-Kit-p-3150.html) and connect it to your Azure Sphere board. Also attach the light and temperature/humidity sensors.
+2. Repeat steps 5 and 6 from the setup instruction above.
+3. Run the `azure-sphere-sensor-demo` project. It will continously read from the attached sensors and write the values, together with the current timestamp, to the HTTP server's database.
+
+### Working with the HTTP server
+
+As you might have already guessed, running the HTTP server requires you to specify a port, these demos always use port 8181. If you'd like to change it, make sure to reflect the change in the corresponding `OBX_TEST_SERVER_PORT` define, for example [here](azure-sphere-test/main.c#L20).
+
+ObjectBox will create the database files (i.e. `data.mdb` and `lock.mdb`) _in the current directory_. This means that you can call the HTTP server from another, empty directory if you prefer. Additionally, if these database files already exist in the current directory, they will be reused, i.e. none of their data is lost.
 
 You can also look at the data currently residing in the database by using the ObjectBox Browser: just enter `http://localhost:8181` (of course depending on which port you chose) into the URL bar of a web browser of your choice.
 
