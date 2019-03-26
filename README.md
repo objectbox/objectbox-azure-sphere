@@ -1,10 +1,18 @@
 # ObjectBox client for Azure Sphere
 
-For a general introduction to Azure Sphere and use cases in combination with [ObjectBox](https://objectbox.io/), check the [announcement post](https://objectbox.io/objectbox-on-azure-sphere-efficient-handling-of-persistent-iot-data-on-tiny-devices/). 
+For a general introduction to Azure Sphere and use cases in combination with [ObjectBox](https://objectbox.io/), check the [announcement post](https://objectbox.io/objectbox-on-azure-sphere-efficient-handling-of-persistent-iot-data-on-tiny-devices/).
 
-## Setup
+These are the basic components, and how the play together:
 
-For setting up the basic environment, please check out [the official installation instructions](https://docs.microsoft.com/en-us/azure-sphere/install/overview) for Azure Sphere by Microsoft. Next, do the following to run the demo project `azure-sphere-test`:
+* [objectbox-client-azure-sphere](objectbox-client-azure-sphere): the ObjectBox client library to run on Azure Sphere.
+  Connects to a ObjectBox server via HTTP. 
+* [azure-sphere-test](azure-sphere-test): Demonstrates some basic operations like reading and writing data using the ObjectBox client library.
+* [azure-sphere-sensor-demo](azure-sphere-sensor-demo): Reports data from sensors attached to the Azure Sphere using the ObjectBox client library.
+* ObjectBox server: The Azure Sphere client connects to this server running on a Windows or Linux machine.
+
+## Basic Setup
+
+After completing [the general Azure Sphere setup procedure required by Microsoft](https://docs.microsoft.com/en-us/azure-sphere/install/overview), these are the steps to run the ObjectBox client demo project `azure-sphere-test`:
 
 1. Download the HTTP server by running `./download.sh` on Linux or `download.bat` on Windows in this project's root directory.
    Alternatively, you can check the [releases](https://github.com/objectbox/objectbox-azure-sphere/releases) and download manually.
@@ -18,15 +26,23 @@ For setting up the basic environment, please check out [the official installatio
 
 Note that steps 1 to 3 can be done on Linux or Windows; steps 4 to 8 strictly require Windows because of Visual Studio. Also, these two sections do not need to be executed on the same computer.
 
-## Next steps
+## Next Steps
 
-### The sensor demo
+### The Sensor Demo
 
 After having successfully run the demo, you are ready to check out the other demo project, `azure-sphere-sensor-demo`:
 
 1. Buy the [_Grove Starter Kit for Azure Sphere_](https://www.seeedstudio.com/Grove-Starter-Kit-for-Azure-Sphere-MT3620-Development-Kit-p-3150.html) and connect it to your Azure Sphere board. Also attach the light and temperature/humidity sensors.
 2. Repeat steps 5 and 6 from the setup instruction above for the respective files in the `azure-sphere-sensor-demo` project.
-3. Run the `azure-sphere-sensor-demo` project. It will continously read from the attached sensors and write the values, together with the current timestamp, to the HTTP server's database.
+3. Run the `azure-sphere-sensor-demo` project. It will continuously read from the attached sensors and write the values, together with the current timestamp, to the HTTP server's database.
+
+### Viewing Data
+
+You can also look at the data in the database by using the ObjectBox Browser.
+While the server is running, open [http://localhost:8181](http://localhost:8181) in your browser.
+You need to adjust the URL if you specified another port, or the server is running on another machine.
+ 
+![Object Browser](misc/screenshot-objectbox-browser.png)
 
 ### Working with the HTTP server
 
@@ -34,7 +50,6 @@ As you might have already guessed, running the HTTP server requires you to speci
 
 ObjectBox will create the database files (i.e. `data.mdb` and `lock.mdb`) _in the current directory_. This means that you can call the HTTP server from another, empty directory if you prefer. Additionally, if these database files already exist in the current directory, they will be reused, i.e. none of their data is lost.
 
-You can also look at the data currently residing in the database by using the ObjectBox Browser: just enter `http://localhost:8181` (of course depending on which port you chose) into the URL bar of a web browser of your choice.
 
 ## Architecture
 
