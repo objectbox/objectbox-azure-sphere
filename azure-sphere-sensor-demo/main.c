@@ -5,10 +5,10 @@
 #include <time.h>
 #include <inttypes.h>
 #include <math.h>
+#include <applibs/log.h>
 
 #include "applibs_versions.h"
 #include "mt3620_rdb.h"
-#include <applibs/log.h>
 
 #include <Grove.h>
 #include <Sensors/GroveLightSensor.h>
@@ -40,12 +40,6 @@ void register_sigterm_handler() {
 void fail_with_output(const char* msg) {
 	Log_Debug(msg);
 	exit(1);
-}
-
-float fix_float(float x) {
-	if (isinf(x) || isnan(x))
-		return 0.0f;
-	return x;
 }
 
 uint64_t get_current_time_ns() {
@@ -95,7 +89,7 @@ int main(int argc, char *argv[]) {
 	store_options.model.data = NULL;
 	store_options.model.size = 0;
 
-	// create store (make sure to execute `./objectbox-http-server ../path/to/test-db/ 8181` on the respective server computer beforehand)
+	// create store (make sure to execute `./objectbox-http-server 8181` on the respective server computer beforehand)
 	OBXC_store* store = obxc_store_open(&store_options);
 	if (store == NULL)
 		fail_with_output("unable to construct ObjectBox client store instance");
@@ -107,11 +101,14 @@ int main(int argc, char *argv[]) {
 	void* temp_humi_sensor = GroveTempHumiSHT31_Open(i2c_fd);
 	while(1) {
 		GroveTempHumiSHT31_Read(temp_humi_sensor);
-		transmit_sensor_values(store, GroveAD7992_ConvertToMillisVolt(GroveLightSensor_Read(light_sensor)), GroveTempHumiSHT31_GetTemperature(temp_humi_sensor), GroveTempHumiSHT31_GetHumidity(temp_humi_sensor));
+        float light_intensity = GroveAD7992_ConvertToMillisVolt(GroveLightSensor_Read(light_sensor));
+        float temperature = GroveTempHumiSHT31_GetTemperature(temp_humi_sensor);
+        float humidity = GroveTempHumiSHT31_GetHumidity(temp_humi_sensor);
+        transmit_sensor_values(store, light_intensity, temperature, humidity);
 		usleep(500000);
 	}
 
-	// eventually close store
+	// "Unreachable code" because of infinite while loop above - just to illustrate how you would clean up
 	obxc_store_close(store);
 	Log_Debug("application exiting...\n");
 
